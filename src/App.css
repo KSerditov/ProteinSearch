@@ -1,0 +1,74 @@
+#root {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.app-main-wrapper {
+  width: 100vw;
+  height: 100vh;
+
+  margin: 0;
+  padding: 0;
+
+  background-image: url("./assets/dna-representation-collage.png");
+  background-size: cover;
+}
+
+.app-main {
+  position: fixed;
+  top: 160px;
+  right: 130px;
+
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  gap: 11px;
+}
+
+@media only screen and (max-device-width: 480px) {
+  .app-main {
+    right: 0;
+  }
+}
+
+.app-title {
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 44px;
+
+  color: #000000;
+}
+
+.app-description {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+
+  text-align: left;
+
+  color: #616161;
+}
+
+.app-login {
+  width: 158px;
+  height: 48px;
+
+  background: #ffffff;
+  border-radius: 24px;
+
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 16px;
+
+  color: #175bc0;
+}

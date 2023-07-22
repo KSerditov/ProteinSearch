@@ -1,0 +1,32 @@
+.notfound-content {
+  flex-grow: 1;
+  overflow: auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.notfound-header {
+  font-weight: 600;
+  font-size: 72px;
+  line-height: 98px;
+
+  color: #000000;
+}
+
+.notfound-description {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+
+  color: #9f9f9f;
+}
+
+.notfound-button {
+  background: #d8e7ff;
+  border-radius: 24px;
+
+  margin: 20px 0px 0px 0px;
+}

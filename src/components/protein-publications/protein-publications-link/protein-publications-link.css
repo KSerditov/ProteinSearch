@@ -1,0 +1,36 @@
+.protein-publications-link-content {
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+
+.protein-publications-link {
+  border-radius: 4px;
+
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+
+  padding: 4px 10px 4px 10px;
+}
+
+.protein-publications-link-enabled {
+  color: #3c86f4;
+  border: 1px solid #3c86f4;
+}
+.protein-publications-link-disabled {
+  color: #9f9f9f;
+  border: 1px solid #9f9f9f;
+}
+
+.protein-publications-link > div > svg > path {
+  fill: #3c86f4;
+}
+
+.protein-publications-link-disabled > div > svg > path {
+  fill: #9f9f9f;
+}

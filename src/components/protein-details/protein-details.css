@@ -1,0 +1,52 @@
+.protein-details-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.protein-details-title {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+
+  color: #000000;
+
+  margin-bottom: 8px;
+}
+
+.protein-property-table td {
+  padding-right: 120px;
+  padding-bottom: 12px;
+}
+
+.protein-sequence-button-copy {
+  margin-left: auto;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+
+  gap: 8px;
+}
+
+.protein-sequence-button-copy-clickable {
+  cursor: pointer;
+
+  margin-bottom: 5px;
+}
+
+.protein-sequence {
+  box-sizing: border-box;
+  
+  background: #f2f2f2;
+  border-radius: 8px;
+
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+
+  color: #000000;
+
+  padding: 12px;
+}

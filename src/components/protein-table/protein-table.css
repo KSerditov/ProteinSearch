@@ -1,0 +1,83 @@
+.protein-table-wrapper {
+  height: 100%;
+  overflow: auto;
+  margin: 20px 130px 0px 130px;
+}
+
+@media only screen and (max-device-width: 480px) {
+  .protein-table-wrapper {
+    margin: 20px 0px 0px 0px;
+  }
+}
+
+.protein-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.protein-table-header {
+  background: #f5f5f5;
+  border-radius: 8px;
+
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+
+  color: #000000;
+
+  text-align: left;
+}
+
+.protein-table-header-row {
+  background-color: #f5f5f5;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.protein-table-header-column {
+  padding: 12px 12px 12px 12px;
+}
+
+.protein-table-content {
+  text-align: left;
+  vertical-align: middle;
+
+  font-size: 14px;
+  line-height: 19px;
+
+  padding: 12px 12px 12px 12px;
+}
+
+.protein-table-column-generic {
+  font-weight: 400;
+  color: #2b2b2b;
+}
+
+.protein-table-column-entry {
+  font-weight: 600;
+  color: #175bc0;
+}
+
+.protein-table-entry {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.protein-table-gene-main {
+  font-weight: 600;
+}
+
+div[data-organism] {
+  background: #cfffdd;
+  border-radius: 12px;
+
+  text-align: center;
+
+  white-space: nowrap;
+  padding: 2px 12px 2px 12px;
+}
+
+div[data-organism="Homo sapiens"] {
+  background: #d8e7ff;
+}

@@ -1,0 +1,161 @@
+.search-wrapper {
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+
+  gap: 10px;
+
+  margin-top: 30px;
+}
+
+.search-input {
+  flex-grow: 1;
+  margin-left: 130px;
+
+  height: 40px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #d9d9d9;
+  border-radius: 8px;
+
+  padding: 0px 16px 0px 16px;
+}
+
+.search-button-search {
+  width: 180px;
+  height: 40px;
+}
+
+.search-button-filters {
+  position: relative;
+
+  margin-right: 130px;
+
+  width: 40px;
+  height: 40px;
+  padding: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media only screen and (max-device-width: 480px) {
+  .search-input {
+    margin-left: 0;
+  }
+  .search-button-filters {
+    margin-right: 0;
+  }
+}
+
+.search-button-filters > svg {
+  fill: rgb(60, 134, 244);
+}
+
+.search-button {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 16px;
+  white-space: nowrap;
+
+  color: #175bc0;
+
+  background: rgba(60, 134, 244, 0.15);
+  border-radius: 8px;
+  border: 0px;
+
+  padding: 0;
+}
+
+.search-button:hover {
+  background: rgba(60, 134, 244, 0.35);
+}
+
+.search-button:active {
+  color: #ffffff;
+  background: #3c86f4;
+}
+
+.search-button:disabled {
+  background-color: grey;
+  color: white;
+  cursor: not-allowed;
+}
+
+.search-results-wrapper {
+  height: 100%;
+}
+
+.search-results-nodata-wrapper {
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-results-text {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+
+  color: #616161;
+}
+
+.search-results-count {
+  margin: 20px 130px 0px 130px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+
+  color: #2b2b2b;
+}
+@media only screen and (max-device-width: 480px) {
+  .search-results-count {
+    margin: 20px 0px 0px 0px;
+  }
+}
+
+.search-filters-popup {
+  width: 335px;
+
+  margin: 1px 1px 1px 1px;
+  position: absolute;
+
+  /* TBD Need to find a way to position relatevly - maybe calculate in component? */
+  top: 103px;
+  right: 130px;
+
+  z-index: 1000;
+}
+
+@media only screen and (max-device-width: 480px) {
+  .search-filters-popup {
+    right: 0;
+  }
+}
+
+.search-filters-popup-opened {
+  background: #175bc0;
+}
+
+.search-filters-popup-opened > svg {
+  fill: #ffffff;
+}
+
+.search-filter-alert {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #3C86F4;
+}

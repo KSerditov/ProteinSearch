@@ -1,0 +1,53 @@
+.protein-page-wrapper-scroll{
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.protein-page-wrapper {
+  margin: 30px 130px 30px 130px;
+}
+
+@media only screen and (max-device-width: 480px) {
+  .protein-page-wrapper {
+    margin: 30px 5px 30px 5px;
+  }
+}
+
+.protein-page-tab-buttons {
+  margin: 12px 0px 24px 0px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.protein-page-tab-button {
+  box-sizing: border-box;
+
+  padding: 10px 23px 10px 23px;
+
+  background: #ffffff;
+
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+
+  color: #9f9f9f;
+
+  cursor: pointer;
+}
+
+.protein-page-tab-button-active {
+  color: #3c86f4;
+  border-bottom: 2px solid #3c86f4;
+}
+
+.protein-sequence {
+  width: 100%;
+  word-wrap: break-word;
+  text-align: left;
+}
+
+.protein-page-tab {
+}
