@@ -14,14 +14,16 @@ const ProteinCommon: React.FC<ProteinProps> = ({ proteinData }) => {
           {" / "}
           {proteinData.uniProtkbId}
         </div>
-        <div className="protein-organism" data-organism={proteinData.organism}>{proteinData.organism}</div>
+        <div className="protein-organism" data-organism={proteinData.organism}>
+          {proteinData.organism}
+        </div>
       </div>
       <div className="protein-property">
-        <div className="protein-title">Protein</div>
+        <div className="protein-title">{"Protein"}</div>
         <div className="protein-text">{proteinData.description}</div>
       </div>
       <div className="protein-property">
-        <div className="protein-title">Gene</div>
+        <div className="protein-title">{"Gene"}</div>
         <div className="protein-text">{proteinData.gene}</div>
       </div>
     </div>

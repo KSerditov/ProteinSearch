@@ -26,6 +26,7 @@ interface IProteinInput {
 export function mapProteinsData(rawProteinItem: IProteinInput) {
   let subcellularLocation: string = "";
   let foundComment: IComment | undefined;
+
   if (rawProteinItem.comments && Array.isArray(rawProteinItem.comments)) {
     foundComment = rawProteinItem.comments.find(
       (comment: IComment) => comment.commentType === "SUBCELLULAR LOCATION"
@@ -48,6 +49,7 @@ export function mapProteinsData(rawProteinItem: IProteinInput) {
     name: "",
     synonyms: [],
   };
+
   if (rawProteinItem.genes && Array.isArray(rawProteinItem.genes)) {
     genesynonyms = rawProteinItem.genes[0].synonyms || [];
     synonyms = genesynonyms ? genesynonyms.map((item) => item.value) : [];

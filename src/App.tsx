@@ -20,7 +20,7 @@ const App = () => {
 
     return () => unsubscribe();
   }, []);
-  
+
   return (
     <div className="app-main-wrapper">
       <div className="app-main">

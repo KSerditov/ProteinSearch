@@ -13,13 +13,13 @@ export interface IProteinPublication {
 }
 
 export interface IProteinPublicationReference {
-    id: string;
-    source: string;
-    categories: string[];
-    positions: string[];
+  id: string;
+  source: string;
+  categories: string[];
+  positions: string[];
 }
 
-export interface IProteinPublicationsPayload{
-    proteinId: string;
-    publications: IProteinPublication[];
+export interface IProteinPublicationsPayload {
+  proteinId: string;
+  publications: IProteinPublication[];
 }

@@ -15,9 +15,9 @@ const NoResults: React.FC = () => {
   return (
     <div className="search-results-wrapper">
       <div className="search-results-nodata-wrapper">
-        <span className="search-results-text">No data to display</span>
+        <span className="search-results-text">{"No data to display"}</span>
         <span className="search-results-text">
-          Please start search to display results
+          {"Please start search to display results"}
         </span>
       </div>
     </div>
@@ -64,16 +64,20 @@ const Search = () => {
 
   const buildUrlAndNavigate = (filters?: string) => {
     const searchParams = new URLSearchParams();
-    let path = "/search";
+    const path = "/search";
+
     if (searchStringLocal) {
       searchParams.append("query", encodeURIComponent(searchStringLocal));
     } else {
       searchParams.append("query", encodeURIComponent("*"));
     }
+
     let url = `${path}?${searchParams.toString()}`;
+
     if (filters) {
       url = `${url}&${filters}`;
     }
+
     navigate(url);
   };
 
@@ -99,9 +103,9 @@ const Search = () => {
         <>
           <div className="search-results-count">
             {searchResults.totalResults}
-            {` Search Results for \"${decodeURIComponent(
+            {` Search Results for "${decodeURIComponent(
               searchResults.searchString
-            )}\"`}
+            )}"`}
           </div>
           <ProteinTable />
         </>
@@ -119,6 +123,7 @@ const Search = () => {
         if (Array.isArray(value)) {
           return value.length > 0;
         }
+
         return key && value;
       })
       .map(([key, value]) => {
@@ -127,9 +132,11 @@ const Search = () => {
             value.join(",")
           )}`;
         }
+
         return `${encodeURIComponent(key)}=${encodeURIComponent(value)}`;
       })
       .join("&");
+
     buildUrlAndNavigate(filtersQueryString);
   };
 
@@ -138,6 +145,7 @@ const Search = () => {
       if (Array.isArray(value)) {
         return value.length > 0;
       }
+
       return value !== "";
     });
   };
@@ -159,7 +167,7 @@ const Search = () => {
           className="search-button-search search-button"
           onClick={handleSearchClick}
         >
-          Search
+          {"Search"}
         </button>
         <button
           className={
@@ -178,7 +186,7 @@ const Search = () => {
             <path d="M7.2 10.8C8.87744 10.8 10.2869 11.9473 10.6866 13.5H20.7C21.197 13.5 21.6 13.903 21.6 14.4C21.6 14.8419 21.2816 15.2093 20.8618 15.2854L20.7 15.3L10.6861 15.3018C10.2858 16.8536 8.87679 18 7.2 18C5.52321 18 4.11417 16.8536 3.71389 15.3018L0.9 15.3C0.402948 15.3 0 14.897 0 14.4C0 13.9581 0.318384 13.5907 0.738216 13.5146L0.9 13.5H3.71342C4.11307 11.9473 5.52256 10.8 7.2 10.8ZM7.2 12.6C6.2059 12.6 5.4 13.4059 5.4 14.4C5.4 15.3941 6.2059 16.2 7.2 16.2C8.1941 16.2 9 15.3941 9 14.4C9 13.4059 8.1941 12.6 7.2 12.6ZM14.4 0C16.0774 0 17.487 1.14728 17.8866 2.69996L20.7 2.7C21.197 2.7 21.6 3.10295 21.6 3.6C21.6 4.04183 21.2816 4.4093 20.8618 4.48549L20.7 4.5L17.8861 4.50184C17.4859 6.05362 16.0769 7.2 14.4 7.2C12.7232 7.2 11.3142 6.05362 10.9139 4.50184L0.9 4.5C0.402948 4.5 0 4.09705 0 3.6C0 3.15817 0.318384 2.7907 0.738216 2.71451L0.9 2.7L10.9134 2.69996C11.3131 1.14728 12.7226 0 14.4 0ZM14.4 1.8C13.4059 1.8 12.6 2.6059 12.6 3.6C12.6 4.5941 13.4059 5.4 14.4 5.4C15.3941 5.4 16.2 4.5941 16.2 3.6C16.2 2.6059 15.3941 1.8 14.4 1.8Z" />
           </svg>
           {getFiltersSet(searchFilters) && (
-            <div className="search-filter-alert"></div>
+            <div className="search-filter-alert" />
           )}
         </button>
       </div>

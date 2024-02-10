@@ -11,14 +11,14 @@ const Notfound = () => {
 
   return (
     <>
-    <Header/>
-    <div className="notfound-content">
-      <span className="notfound-header">404</span>
-      <span className="notfound-description">Page not found</span>
-      <button className="notfound-button" onClick={navSearch}>
-        Back to Search
-      </button>
-    </div>
+      <Header />
+      <div className="notfound-content">
+        <span className="notfound-header">{"404"}</span>
+        <span className="notfound-description">{"Page not found"}</span>
+        <button className="notfound-button" onClick={navSearch}>
+          {"Back to Search"}
+        </button>
+      </div>
     </>
   );
 };

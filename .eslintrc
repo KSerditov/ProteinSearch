@@ -1,7 +1,8 @@
 {
     "root": true,
-    "extends": ["react-config-r13v"],
-
+    "extends": [
+        "react-config-r13v"
+    ],
     "parserOptions": {
         "project": "tsconfig.json",
         "ecmaFeatures": {
@@ -20,15 +21,22 @@
                 "patterns": [
                     {
                         "message": "do not import from sibling package",
-                        "group":["../../**/src/"]
+                        "group": [
+                            "../../**/src/"
+                        ]
                     },
                     {
                         "message": "Do not import from Material-UI directly, use UI",
-                        "group": ["@material-ui/*", "@mui/*"]
+                        "group": [
+                            "@material-ui/*",
+                            "@mui/*"
+                        ]
                     },
                     {
                         "message": "Do not import from @emotion directly, use UI",
-                        "group": ["@emotion/*"]
+                        "group": [
+                            "@emotion/*"
+                        ]
                     }
                 ]
             }
@@ -53,7 +61,10 @@
                 ]
             }
         ],
-        "@typescript-eslint/consistent-type-definitions": ["warn", "interface"],
+        "@typescript-eslint/consistent-type-definitions": [
+            "warn",
+            "interface"
+        ],
         "@kyleshevlin/prefer-custom-hooks": "off",
         "react/react-in-jsx-scope": "off",
         "unicorn/prefer-object-from-entries": "off",
@@ -61,11 +72,21 @@
         "unicorn/prefer-node-protocol": "off",
         "jest/expect-expect": "off",
         "jest/valid-title": "off",
-        "unicorn/expiring-todo-comments": "off"
+        "unicorn/expiring-todo-comments": "off",
+        "prettier/prettier": [
+            "error",
+            {
+                "endOfLine": "auto"
+            }
+        ],
+        "semi": 0
     },
     "overrides": [
         {
-            "files": ["./src/ui/**/*.ts", "./src/ui/**/*.tsx"],
+            "files": [
+                "./src/ui/**/*.ts",
+                "./src/ui/**/*.tsx"
+            ],
             "rules": {
                 "no-restricted-imports": "off"
             }

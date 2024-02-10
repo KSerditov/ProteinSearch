@@ -8,7 +8,7 @@ const firebaseConfig = {
   storageBucket: "ksprotauth.appspot.com",
   messagingSenderId: "430140733022",
   appId: "1:430140733022:web:c83ed9c239dc6bdacbe6cf",
-  measurementId: "G-VFEEYCG3H1"
+  measurementId: "G-VFEEYCG3H1",
 };
 
 const app = initializeApp(firebaseConfig);

@@ -27,7 +27,7 @@ const ProteinPublications: React.FC<IProteinPublicationProps> = ({
   }, [proteinDataCache, proteinid]);
 
   useEffect(() => {
-    if (!pubData || pubData.length == 0) {
+    if (!pubData || pubData.length === 0) {
       setIsLoading(true);
 
       // TBD should I make it downloaded in the background when Protein page is opened
@@ -46,7 +46,7 @@ const ProteinPublications: React.FC<IProteinPublicationProps> = ({
     if (!pubData) {
       return (
         <div className="protein-publications-no-data">
-          No Publications found
+          {"No Publications found"}
         </div>
       );
     }

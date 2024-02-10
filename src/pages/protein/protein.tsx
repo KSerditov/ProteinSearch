@@ -45,8 +45,9 @@ const Protein: React.FC = () => {
     if (isLoading) {
       return <Spinner />;
     }
+
     if (!proteinData) {
-      return <div className="protein-no-data">Protein ID is not found</div>;
+      return <div className="protein-no-data">{"Protein ID is not found"}</div>;
     } else {
       return (
         <>
@@ -58,7 +59,7 @@ const Protein: React.FC = () => {
               }`}
               onClick={() => handleTabClick("tab1")}
             >
-              Details
+              {"Details"}
             </div>
             <div
               className={`protein-page-tab-button ${
@@ -66,7 +67,7 @@ const Protein: React.FC = () => {
               }`}
               onClick={() => handleTabClick("tab2")}
             >
-              Feature Viewer
+              {"Feature Viewer"}
             </div>
             <div
               className={`protein-page-tab-button ${
@@ -74,7 +75,7 @@ const Protein: React.FC = () => {
               }`}
               onClick={() => handleTabClick("tab3")}
             >
-              Publications
+              {"Publications"}
             </div>
           </div>
         </>
@@ -83,7 +84,9 @@ const Protein: React.FC = () => {
   };
 
   const renderTabs = () => {
-    if (!proteinData) return null;
+    if (!proteinData) {
+      return null;
+    }
 
     switch (activeTab) {
       case "tab1":

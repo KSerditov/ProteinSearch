@@ -42,15 +42,18 @@ const itemSlice = createSlice({
   reducers: {
     fetchItems: (state: IAppState, action: PayloadAction<ISearchResult>) => {
       state.searchResults = action.payload;
+
       return state;
     },
     fetchFacets: (state: IAppState, action: PayloadAction<IFacets>) => {
       state.searchFacets = action.payload;
+
       return state;
     },
     appendItems: (state: IAppState, action: PayloadAction<ISearchResult>) => {
       state.searchResults.nextLink = action.payload.nextLink;
       state.searchResults.items.push(...action.payload.items);
+
       return state;
     },
     setSearchFilters: (
@@ -58,6 +61,7 @@ const itemSlice = createSlice({
       action: PayloadAction<ISearchFilters>
     ) => {
       state.searchFilters = action.payload;
+
       return state;
     },
     fetchProtein: (state: IAppState, action: PayloadAction<IProtein>) => {
@@ -65,6 +69,7 @@ const itemSlice = createSlice({
         ...state.proteinCache,
         [action.payload.id]: action.payload,
       };
+
       return state;
     },
     fetchProteinPublications: (
@@ -75,10 +80,9 @@ const itemSlice = createSlice({
         state.proteinCache[action.payload.proteinId].publications =
           action.payload.publications;
       } else {
-        console.error(
-          "proteinId does not exist in cache - this is not expected to happen: " +
-            action.payload.proteinId
-        );
+        //console.error(
+        //  "proteinId does not exist in cache - this is not expected to happen: " + action.payload.proteinId
+        //);
       }
 
       return state;

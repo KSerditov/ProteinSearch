@@ -2,7 +2,6 @@ import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from "../../firebase/firebaseconfig";
 import "./header.css";
 import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
 import React from "react";
 
 const Header: React.FC = () => {
@@ -10,7 +9,7 @@ const Header: React.FC = () => {
 
   const [login, setLogin] = React.useState("");
 
-  useEffect(() => {
+  React.useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         /*const uid = user.uid;
@@ -29,7 +28,7 @@ const Header: React.FC = () => {
     signOut(auth)
       .then(() => {
         navigate("/");
-        /*console.log("Signed out successfully");*/
+        console.log("Signed out successfully");
       })
       .catch((error) => {
         console.error("Sign out error: " + error);
@@ -40,7 +39,7 @@ const Header: React.FC = () => {
     <div className="app-header">
       <div className="app-header-login">{login}</div>
       <button className="app-header-button" onClick={handleLogout}>
-        Log Out
+        {"Log Out"}
       </button>
     </div>
   );
