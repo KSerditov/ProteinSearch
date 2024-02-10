@@ -39,3 +39,4 @@ To run the project locally, follow these steps:
    ![image](https://github.com/KSerditov/ProteinSearch/assets/3009597/eff06663-0a6c-45dc-bfe0-e007fbfcca83)
 
 5. **Caching for Performance**: The app caches results to ensure that repeated queries for the same protein load almost instantly.
+6. **Adaptive design**: The app supports mobile browsing.
