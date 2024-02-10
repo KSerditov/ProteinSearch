@@ -51,3 +51,14 @@
 
 .protein-page-tab {
 }
+
+@media (prefers-color-scheme: dark) {
+  .protein-page-tab-button {
+    background: #9E9E9E;
+    color: #000000;
+  }
+
+  :root{
+    color: #424242;
+  }
+}

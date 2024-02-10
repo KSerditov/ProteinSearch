@@ -15,25 +15,30 @@ const Login: React.FC = () => {
   const validate = () => {
     if (login.length === 0) {
       setErrorMsg("");
+
       return true;
     }
 
     if (!emailRegex.test(login)) {
       setErrorMsg("Login must be a valid e-mail!");
+
       return true;
     }
 
     if (password.length === 0) {
       setErrorMsg("");
+
       return true;
     }
 
     if (password.length < 6) {
       setErrorMsg("Password must be at least 6 symbols!");
+
       return true;
     }
 
     setErrorMsg("");
+
     return false;
   };
 
@@ -46,12 +51,14 @@ const Login: React.FC = () => {
     signInWithEmailAndPassword(auth, login, password)
       .then((userCredential) => {
         const user = userCredential.user;
+
         console.log("User signed in: " + user.email);
         navigate("/search");
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
+
         setErrorMsg("Login Error: " + errorMessage + " code: " + errorCode);
       });
   };
@@ -89,7 +96,7 @@ const Login: React.FC = () => {
       />
 
       <div className="error-message">{errorMsg}</div>
-      
+
       <button className="form-button" disabled={disabled} onClick={handleLogin}>
         Login
       </button>

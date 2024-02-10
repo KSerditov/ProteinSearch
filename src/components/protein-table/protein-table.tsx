@@ -4,21 +4,23 @@ import { useNavigate } from "react-router-dom";
 import { RootState, useAppDispatch } from "../../store/store";
 import { fetchAdditionalItemsAsync } from "../../store/actions";
 import { useSelector } from "react-redux";
-import { useState } from "react";
 import Spinner from "../../components/spinner/spinner";
 
 const ProteinTable: React.FC = () => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
+
   const searchResults = useSelector(
     (state: RootState) => state.appState.searchResults
   );
-  const [isLoading, setIsLoading] = useState(false);
+
+  const [isLoading, setIsLoading] = React.useState(false);
 
   const handleEntryClick = (proteinid: string) => {
     if (!proteinid) return;
 
     const url = `/protein/${proteinid}`;
+
     navigate(url);
   };
 
@@ -26,7 +28,8 @@ const ProteinTable: React.FC = () => {
     const bottom =
       e.currentTarget.scrollHeight - e.currentTarget.scrollTop <
       e.currentTarget.clientHeight + 100;
-    if (
+
+      if (
       bottom &&
       !isLoading &&
       searchResults.items.length < searchResults.totalResults
@@ -34,6 +37,7 @@ const ProteinTable: React.FC = () => {
       setIsLoading(true);
 
       const url = new URL(searchResults.nextLink);
+
       dispatch(
         fetchAdditionalItemsAsync(url, searchResults.searchString)
       ).finally(() => {
@@ -61,7 +65,9 @@ const ProteinTable: React.FC = () => {
         <tbody>
           {searchResults.items.map((item, index) => (
             <tr key={item.primaryAccession}>
-              <td className="protein-table-content protein-table-column-generic">{index + 1}</td>
+              <td className="protein-table-content protein-table-column-generic">
+                {index + 1}
+              </td>
               <td className="protein-table-content protein-table-column-entry">
                 <span
                   className="protein-table-entry"

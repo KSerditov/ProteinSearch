@@ -8,6 +8,7 @@ import { useEffect } from "react";
 
 const NotFoundRedirect = () => {
   const navigate = useNavigate();
+
   useEffect(() => {
     navigate("/not-found");
   }, []);

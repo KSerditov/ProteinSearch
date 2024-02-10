@@ -17,6 +17,7 @@ const ProteinFeatureViewer: React.FC<ProteinProps> = ({ proteinData }) => {
       if (!window.customElements.get("protvista-uniprot")) {
         window.customElements.define("protvista-uniprot", ProtvistaUniprot);
       }
+
       if (ref.current) {
         const element = document.createElement("protvista-uniprot");
         element.setAttribute("accession", proteinData.id);
@@ -25,7 +26,7 @@ const ProteinFeatureViewer: React.FC<ProteinProps> = ({ proteinData }) => {
     }
   }, [proteinData.id]);
 
-  return <div ref={ref} className="protein-feature-viewer-wrapper"></div>;
+  return <div ref={ref} className="protein-feature-viewer-wrapper" />;
 };
 
 export default ProteinFeatureViewer;

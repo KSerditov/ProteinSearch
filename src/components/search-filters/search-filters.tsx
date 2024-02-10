@@ -24,16 +24,20 @@ const SearchFilters: React.FC<{
   const validate = () => {
     if (filters.sequenceLengthMin) {
       const lengthMin = Number(filters.sequenceLengthMin);
+
       if (!Number.isInteger(lengthMin) || lengthMin < 0) {
         setErrorMsg("Sequence length must be positive integer value");
+
         return true;
       }
     }
 
     if (filters.sequenceLengthMax) {
       const lengthMax = Number(filters.sequenceLengthMax);
+
       if (!Number.isInteger(lengthMax) || lengthMax < 0) {
         setErrorMsg("Sequence length must be positive integer value");
+
         return true;
       }
     }
@@ -41,10 +45,12 @@ const SearchFilters: React.FC<{
     if (filters.sequenceLengthMin && filters.sequenceLengthMax) {
       const lengthMin = Number(filters.sequenceLengthMin);
       const lengthMax = Number(filters.sequenceLengthMax);
+
       if (lengthMax < lengthMin) {
         setErrorMsg(
           "Sequence length maximum value must be larger than minimum value"
         );
+
         return true;
       }
     }
@@ -56,10 +62,12 @@ const SearchFilters: React.FC<{
       setErrorMsg(
         "Both or none of min and max sequence length values must be populated"
       );
+
       return true;
     }
 
     setErrorMsg("");
+
     return false;
   };
 
@@ -199,7 +207,7 @@ const SearchFilters: React.FC<{
       </div>
       <div className="search-filter-input-wrapper">
         <label htmlFor="annotation-score" className="search-filters-label">
-          Annotation Score
+          {"Annotation Score"}
         </label>
 
         <select
@@ -226,7 +234,7 @@ const SearchFilters: React.FC<{
 
       <div className="search-filter-input-wrapper">
         <label htmlFor="protein-with" className="search-filters-label">
-          Proteins With
+          {"Proteins With"}
         </label>
         <Select
           name="protein-with"
@@ -255,7 +263,7 @@ const SearchFilters: React.FC<{
 
       <div className="search-filter-input-row-wrapper">
         <button className="form-button" onClick={handleCancelClick}>
-          Clear
+          {"Clear"}
         </button>
 
         <button
@@ -263,7 +271,7 @@ const SearchFilters: React.FC<{
           disabled={disabled}
           onClick={handleApplyClick}
         >
-          Apply Filters
+          {"Apply Filters"}
         </button>
       </div>
     </div>

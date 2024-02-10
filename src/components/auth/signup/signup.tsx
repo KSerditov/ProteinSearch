@@ -18,23 +18,27 @@ const Signup: React.FC = () => {
   const validate = () => {
     if (login.length === 0) {
       setErrorMsg("");
+
       return true;
     }
 
     if (password !== repeatPassword) {
       setErrorMsg("Passwords do not match!");
+
       return true;
     }
 
     if (login.length > 0) {
       if (!emailRegex.test(login)) {
         setErrorMsg("Login must be a valid e-mail!");
+
         return true;
       }
     }
 
     if (password.length === 0 && repeatPassword.length === 0) {
       setErrorMsg("");
+
       return true;
     }
 
@@ -48,10 +52,12 @@ const Signup: React.FC = () => {
       setErrorMsg(
         "Password must be at least 6 symbols, contain uppercase, lowercase letter and a number."
       );
+
       return true;
     }
 
     setErrorMsg("");
+
     return false;
   };
 
@@ -67,12 +73,15 @@ const Signup: React.FC = () => {
         login,
         password
       );
+
       const user = userCredential.user;
+
       console.info("User created: " + user);
     } catch (error: any) {
       const firebaseError = error as FirebaseError;
       const errorCode = firebaseError.code;
       const errorMessage = firebaseError.message;
+
       setErrorMsg("Sign Up Error: " + errorMessage + " code: " + errorCode);
     }
   };
@@ -121,7 +130,7 @@ const Signup: React.FC = () => {
       />
 
       <div className="error-message">{errorMsg}</div>
-      
+
       <button
         className="form-button"
         onClick={handleSignUp}

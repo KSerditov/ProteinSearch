@@ -1,6 +1,6 @@
 export interface IProteinGeneItem {
-    name: string;
-    synonyms: string[];
+  name: string;
+  synonyms: string[];
 }
 
 export interface IProteinItem {

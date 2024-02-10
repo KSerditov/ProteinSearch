@@ -1,16 +1,22 @@
 import { configureStore } from "@reduxjs/toolkit";
 import itemReducer from "./itemslice";
-import thunk from 'redux-thunk';
-import { useDispatch } from 'react-redux';
-import {createStateSyncMiddleware, initMessageListener} from 'redux-state-sync';
- 
+import thunk from "redux-thunk";
+import { useDispatch } from "react-redux";
+import {
+  createStateSyncMiddleware,
+  initMessageListener,
+} from "redux-state-sync";
+
 const reduxStateSyncConfig = {};
 
 const store = configureStore({
   reducer: {
     appState: itemReducer,
   },
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(thunk).concat(createStateSyncMiddleware(reduxStateSyncConfig)),
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware()
+      .concat(thunk)
+      .concat(createStateSyncMiddleware(reduxStateSyncConfig)),
 });
 
 initMessageListener(store);

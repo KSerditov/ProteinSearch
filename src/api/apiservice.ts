@@ -116,6 +116,7 @@ const fetchProteinItemsCommonAPI = async (
 
     const data = await response.json();
     const items: IProteinItem[] = data.results.map(mapProteinsData);
+
     const result: ISearchResult = {
       searchString: searchString,
       totalResults: totalResults,
@@ -138,6 +139,7 @@ export const fetchProteinItems = async (
   if (searchFilters.geneName) {
     stringFilters += ` AND (gene:${searchFilters.geneName})`;
   }
+
   if (searchFilters.sequenceLengthMin && searchFilters.sequenceLengthMax) {
     stringFilters +=
       ` AND ` +
@@ -145,6 +147,7 @@ export const fetchProteinItems = async (
         `length:[${searchFilters.sequenceLengthMin} TO ${searchFilters.sequenceLengthMax}]`
       ).replace(/%20/g, "+");
   }
+
   if (searchFilters.annotationScore) {
     stringFilters += ` AND annotation_score:${searchFilters.annotationScore}`;
   }
@@ -156,10 +159,14 @@ export const fetchProteinItems = async (
   ) {
     const organismFilter = searchFilters.organism
       .map((org, idx) => {
-        if (idx > 0) return ` OR organism_id:${org}`;
+        if (idx > 0) {
+          return ` OR organism_id:${org}`;
+        }
+
         return `organism_id:${org}`;
       })
       .join("");
+
     stringFilters += ` AND (${encodeURIComponent(organismFilter)})`;
   }
 
@@ -171,6 +178,7 @@ export const fetchProteinItems = async (
     const proteinWithFilter = searchFilters.proteinWith
       .map((org, idx) => {
         if (idx > 0) return ` OR proteins_with:${org}`;
+
         return `proteins_with:${org}`;
       })
       .join("");
@@ -180,7 +188,7 @@ export const fetchProteinItems = async (
   const url = new URL(
     `${CONFIG.API_HOST}search?fields=accession,id,gene_names,organism_name,length,cc_subcellular_location&query=(${searchString}${stringFilters})&size=${CONFIG.API_ITEMS_PER_PAGE}`
   );
-  
+
   return fetchProteinItemsCommonAPI(url, searchString);
 };
 

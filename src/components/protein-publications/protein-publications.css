@@ -72,4 +72,8 @@
   margin-top: 10px;
 }
 
-
+@media (prefers-color-scheme: dark) {
+  .protein-publications-publication {
+    background: #f2f2f2;
+  }
+}

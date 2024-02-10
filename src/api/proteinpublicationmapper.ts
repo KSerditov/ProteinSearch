@@ -10,6 +10,7 @@ interface ICrossReference {
 
 export function mapProteinPublicationsData(rawPub: any) {
   let pubMedId;
+
   try {
     if (rawPub.citation && rawPub.citation.citationCrossReferences) {
       pubMedId =
@@ -22,6 +23,7 @@ export function mapProteinPublicationsData(rawPub: any) {
   }
 
   let doiId;
+
   try {
     if (rawPub.citation && rawPub.citation.citationCrossReferences) {
       doiId =
@@ -34,6 +36,7 @@ export function mapProteinPublicationsData(rawPub: any) {
   }
 
   let refs: IProteinPublicationReference[];
+
   refs = rawPub.references.map((rawRef: any) => {
     return {
       id: rawRef.citationId ?? "",

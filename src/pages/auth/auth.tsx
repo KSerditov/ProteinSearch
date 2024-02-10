@@ -31,7 +31,7 @@ const AuthPage: React.FC = () => {
           <span className="auth-form-link" onClick={() => setIsLogin(!isLogin)}>
             {isLogin ? "Sign Up" : "Login"}
           </span>
-          !
+          {"!"}
         </div>
       </div>
     </div>
