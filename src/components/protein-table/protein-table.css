@@ -81,3 +81,9 @@ div[data-organism] {
 div[data-organism="Homo sapiens"] {
   background: #d8e7ff;
 }
+
+@media (prefers-color-scheme: dark) {
+  .protein-table-header-row {
+    background-color: #9E9E9E;
+  }
+}

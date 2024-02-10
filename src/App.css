@@ -72,3 +72,10 @@
 
   color: #175bc0;
 }
+
+@media (prefers-color-scheme: dark) {
+  .app-login {
+    background-color: #DBDBDB;
+    color: #000000;
+  }
+}
